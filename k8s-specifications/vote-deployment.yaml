@@ -1,26 +1,9 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  labels:
-    app: vote
   name: vote
 spec:
-  replicas: 1
-  selector:
-    matchLabels:
-      app: vote
-  template:
-    metadata:
-      labels:
-        app: vote
-    spec:
-      containers:
-      - image: apiVersion: apps/v1
-kind: Deployment
-metadata:
-  name: vote
-spec:
-  replicas: 1
+  replicas: 2
   selector:
     matchLabels:
       app: vote
@@ -31,11 +14,6 @@ spec:
     spec:
       containers:
         - name: vote
-          image: "${ECR_URL}/${REPO_NAME}:${BUILD_TAG}"  # Placeholder for image tag
+          image: ${ECR_URL}/${REPO_NAME}:${BUILD_TAG}
           ports:
             - containerPort: 5000
-
-        name: vote
-        ports:
-        - containerPort: 80
-          name: vote
