@@ -15,7 +15,26 @@ spec:
         app: vote
     spec:
       containers:
-      - image: dockersamples/examplevotingapp_vote
+      - image: apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: vote
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: vote
+  template:
+    metadata:
+      labels:
+        app: vote
+    spec:
+      containers:
+        - name: vote
+          image: "${ECR_URL}/${REPO_NAME}:${BUILD_TAG}"  # Placeholder for image tag
+          ports:
+            - containerPort: 5000
+
         name: vote
         ports:
         - containerPort: 80
