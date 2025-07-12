@@ -14,6 +14,6 @@ spec:
     spec:
       containers:
         - name: vote
-          image: ${ECR_URL}/${REPO_NAME}:${BUILD_TAG}
+          image: 654654589559.dkr.ecr.ap-south-1.amazonaws.com/pop/test:latest
           ports:
             - containerPort: 5000
