@@ -14,6 +14,7 @@ spec:
     spec:
       containers:
         - name: vote
-          image: 654654589559.dkr.ecr.ap-south-1.amazonaws.com/pop/test:latest
+          image: 654654589559.dkr.ecr.ap-south-1.amazonaws.com/pop/test:v1.154
           ports:
             - containerPort: 5000
+# Updated image tag to v1.154 at 2025-07-13T08:18:24Z
